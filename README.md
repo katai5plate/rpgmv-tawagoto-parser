@@ -67,7 +67,7 @@ t.exec();
   { code: 401, parameters: ["これはメッセージです"], indent: 0 },
   { code: 401, parameters: ["これはメッセージです"], indent: 0 },
   { code: 401, parameters: ["これはメッセージですか？"], indent: 0 },
-  { code: 102, parameters: [[Array], -1, -1, 2, 0], indent: 0 },
+  { code: 102, parameters: [["はい", "いいえ"], -1, -1, 2, 0], indent: 0 },
   { code: 402, parameters: [0, "はい"], indent: 0 },
   { code: 119, parameters: ["question_1_0"], indent: 1 },
   { code: 0, parameters: [], indent: 1 },
