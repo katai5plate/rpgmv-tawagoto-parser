@@ -25,7 +25,7 @@ type ChoiceCases =
   | [ChoiceCase, ChoiceCase]
   | [ChoiceCase];
 
-class TawagotoScript {
+export default class TawagotoScript {
   state: State;
   list: InterpreterItem[];
   static WINDOW = WINDOW;
@@ -116,7 +116,7 @@ class TawagotoScript {
     this.list = [...this.list, ...result];
     return result;
   }
-  choice(id: string, cases: ChoiceCases, escCase: ChoiceCase["code"]) {
+  choice(id: string, cases: ChoiceCases, escCase?: ChoiceCase["code"]) {
     const { win, pos, init, esc } = this.state.choice;
     const result = [
       createInterpreterItem(INTERPRETER.CHOICE_INIT, [
@@ -149,7 +149,9 @@ class TawagotoScript {
           createInterpreterItem(INTERPRETER.LABEL, [`${id}_${i}`]),
           // FIXME: 型解決する
           ...code(new TawagotoScript()).reduce<InterpreterItem[]>(
-            (p, [c]: any) => [...p, c],
+            (p, c: any) => {
+              return [...p, ...c];
+            },
             []
           ),
           createInterpreterItem(INTERPRETER.LABEL_JUMP, [`${id}_END`]),

@@ -6,7 +6,7 @@
   "scripts": {
     "watch": "webpack -w --mode=\"development\"",
     "build": "webpack",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -20,9 +20,29 @@
   },
   "homepage": "https://github.com/katai5plate/rpgmv-tawagoto-parser#readme",
   "dependencies": {
+    "@types/jest": "^25.2.1",
+    "jest": "^25.5.1",
+    "ts-jest": "^25.4.0",
     "ts-loader": "^7.0.1",
     "typescript": "^3.8.3",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "ts"
+    ],
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "tsconfig.json"
+      }
+    },
+    "testMatch": [
+      "**/tests/**/*.test.ts"
+    ]
   }
 }
