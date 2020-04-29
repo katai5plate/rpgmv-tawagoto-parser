@@ -1,0 +1,2 @@
+# rpgmv-tawagoto-parser
+ツクールMVのイベントコマンドをJavaScriptから書けるようにする
