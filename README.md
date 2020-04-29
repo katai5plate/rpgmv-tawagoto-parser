@@ -124,6 +124,11 @@ console.log(t.getList());
     "indent": 0
   },
   {
+    "code": 401,
+    "parameters": ["オッケー！"],
+    "indent": 0
+  },
+  {
     "code": 119,
     "parameters": ["question_1_END"],
     "indent": 0
@@ -136,6 +141,16 @@ console.log(t.getList());
   {
     "code": 101,
     "parameters": ["", 0, 0, 2],
+    "indent": 0
+  },
+  {
+    "code": 401,
+    "parameters": ["ええええーーーーっ！！"],
+    "indent": 0
+  },
+  {
+    "code": 401,
+    "parameters": ["あかんやん！"],
     "indent": 0
   },
   {
