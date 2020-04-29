@@ -1,0 +1,28 @@
+{
+  "name": "rpgmv-tawagoto-parser",
+  "version": "1.0.0",
+  "description": "ツクールMVのイベントコマンドをJavaScriptから書けるようにする",
+  "main": "index.js",
+  "scripts": {
+    "watch": "webpack -w --mode=\"development\"",
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/katai5plate/rpgmv-tawagoto-parser.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/katai5plate/rpgmv-tawagoto-parser/issues"
+  },
+  "homepage": "https://github.com/katai5plate/rpgmv-tawagoto-parser#readme",
+  "dependencies": {
+    "ts-loader": "^7.0.1",
+    "typescript": "^3.8.3",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  }
+}
