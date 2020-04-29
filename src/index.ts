@@ -63,6 +63,9 @@ export default class TawagotoScript {
   getList() {
     return [...this.list, createInterpreterItem(INTERPRETER.EMPTY, [])];
   }
+  exec() {
+    (window as any).$gameMap._interpreter._list = this.list;
+  }
   setWindow(option: State["window"]) {
     this.state.window = { ...this.state.window, ...option };
   }

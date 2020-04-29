@@ -12,32 +12,50 @@
 const TS = TawagotoScript;
 const t = new TS();
 
+// 顔グラフィックの変更
 t.setWindow({ face: ["Actor1", 1] });
+// ラベルの設定
 t.label("質問");
+// 文章の表示
 t.mes(`
 これはメッセージです
 これはメッセージです
 これはメッセージです
 これはメッセージですか？`);
-t.choice("question_1", [
-  {
-    label: "はい",
-    code: (x) => [x.mes("オッケー！")],
-  },
-  {
-    label: "いいえ",
-    code: (x) => [
-      x.mes(["ええええーーーーっ！！", "あかんやん！"]),
-      x.goto("質問"),
-    ],
-  },
-]);
+// 選択肢の表示
+t.choice(
+  // 選択肢ID（内部でネスト構造をラベルで平坦化されるため必須）
+  "question_1",
+  [
+    {
+      // 選択項目名
+      label: "はい",
+      // 押した時の処理
+      code: (x) => [x.mes("オッケー！")],
+    },
+    {
+      label: "いいえ",
+      code: (x) => [
+        x.mes(["ええええーーーーっ！！", "あかんやん！"]),
+        x.goto("質問"),
+      ],
+    },
+  ]
+);
+// スクリプト実行
 t.js(`$gameScreen.setZoom(816 * 0.5, 624 * 0.5, 2);`);
+// 効果音の再生
 t.se("Item3");
+// 画面の色調変更
 t.changeScreenColor(TS.COLOR.WHITE, 0, 60);
+// タイトルへ戻る
 t.gotoTitle();
 
+// JSON を出力する
 console.log(t.getList());
+
+// イベントコマンドを即時実行する
+t.exec();
 ```
 
 ```json
